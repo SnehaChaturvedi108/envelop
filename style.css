@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Allison&display=swap');
+*
+{
+  margin-top: 80px;
+  margin-bottom: 10px;
+  margin-left: 130px;
+  margin-right:10px;
+    padding: 0;
+    box-sizing: border-box;
+}
+.body
+{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Allison';
+}
+.wrap
+{
+    position: relative;
+    height: 190px;
+    width: 390px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    background-color:  black;
+    box-shadow:  0 20px 30px black;
+    transform-style: preserve-3d;
+    perspective: 700px;
+}
+.front
+{
+    position:absolute;
+    height: 0;
+    width: 0;
+    z-index: 3;
+}
+.flap
+{
+    border-left: 190px solid transparent;
+    border-right: 200px solid transparent;
+    border-bottom: 120px solid transparent;
+    border-top:100px solid rgb(73, 73, 75);
+    transform-origin: top;
+    transition: 1s ease;
+    margin-left: 0px;
+    margin-top: 0px;
+    
+}
+.pocket
+{
+    border-left: 190px solid rgb(78,79,80);
+    border-right: 200px solid rgb(78, 79, 80);
+    border-bottom: 120px solid rgb(73, 73, 75);
+    border-top:100px solid transparent;   
+    margin-top:0px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    border-radius: 5px;
+}
+.letter
+{
+    position: relative;
+    background-color: rgb(138, 72, 200);
+    border-style: double;
+    height: 95%;
+    width: 95%;
+    margin:auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 26px rgb(2, 2, 72);
+}
+.letter::after
+{
+    content: '';
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: 1s ease-in-out;
+    background-image: linear-gradient(90deg,rgb(0, 0, 0)  100%);
+    margin-top: 0;
+}
+.letter h1
+{
+    display:flex;
+    
+    text-align:center;
+    padding-top: 5px;
+}
+.letter div{
+    padding-left: 5px;
+}
+.wrap:hover .flap
+{
+transform:rotateX(180deg) ;
+transition: 0.5s ease;
+z-index: -1;
+}
+.wrap:hover .letter
+{
+    top:-140px;
+    transition: 1s 1s ease;
+}
